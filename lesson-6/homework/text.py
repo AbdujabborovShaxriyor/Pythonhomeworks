@@ -18,15 +18,15 @@ while True:
             file.write(f"{emp_id} {name} {position} {salary}\n")
     elif choice == 2:
         with open("employees.txt","r") as file:
-            file.read()
+            print(file.read())
     elif choice == 3:
         user_id = int(input("Enter the id of the employee: "))
         with open("employees.txt","r") as file:
             lines = file.readlines()
             for line in lines:
-                for i in line:
+                for i in line.split():
                     if user_id==i:
-                        file.read(line)
+                        print(file.read(line))
                     else:
                         print("There is no such user with this ID")
     elif choice==4:
@@ -44,7 +44,7 @@ while True:
         with open("employees.txt","r+") as file:
             lines = file.readlines()
             for line in lines:
-                for i in line:
+                for i in line.split():
                     if user_id==i:
                         line=""
                     else:
